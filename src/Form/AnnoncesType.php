@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Annonces;
 use App\Entity\Categories;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -19,7 +20,7 @@ class AnnoncesType extends AbstractType
         $builder
             ->add('title', TextType::class)
             //->add('slug')
-            ->add('content', TextareaType::class)
+            ->add('content', CKEditorType::class) // Ce champ sera remplacé par un éditeur WYSIWYG
             //->add('created_at')
             //->add('active')
             //->add('users')
