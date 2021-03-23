@@ -1,0 +1,14 @@
+          <nav class="navbar shadow-1 primary">
+            <a href="{{path('app_home')}}" class="navbar-brand">Axentix</a>
+            <div class="navbar-menu ml-auto">
+             
+              {% if app.user %}
+                <a class="navbar-link" href="{{path('users')}}">Mon profil</a>
+                <a class="navbar-link" href="{{path('app_logout')}}">Déconnexion</a>
+                {% else %}
+                   <a class="navbar-link" href="{{path('app_register')}}">Inscription</a>
+              <a class="navbar-link" href="{{path('app_login')}}">Connexion</a>
+              {% endif %}
+              <a class="navbar-link" href="{{path('users_annonces_ajout')}}">Nouvelle Annonce</a>
+            </div>
+          </nav>

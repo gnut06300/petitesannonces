@@ -8,17 +8,22 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
+<div class="container">
     {% for message in app.flashes('success') %}
         <div class="alert alert-success" role="alert">{{ message }}</div>
     {% endfor %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/laragon/www/nouvelleTechno/petitesannonces/src/Controller/MainController.php'|file_link(0) }}">src/Controller/MainController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/laragon/www/nouvelleTechno/petitesannonces/templates/main/index.html.twig'|file_link(0) }}">templates/main/index.html.twig</a></code></li>
-    </ul>
+    <h1>Les Annonces</h1>
+
+    
+    <div class="grix xs2">
+    {% for annonce in annonces %}
+        <div class="mb-5">
+            <h2>{{ annonce.title }}</h2>
+            <div>{{ annonce.content|raw }}</div>
+            <p>{{ annonce.categories.name}}</p>
+        </div>
+    {% endfor %}
+    </div>
 </div>
 {% endblock %}
