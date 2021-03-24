@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use App\Entity\Categories;
 use App\Form\CategoriesType;
@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * @Route("/admin", name="admin_")
- * @package App\Controller
+ * @package App\Controller\Admin
  */
 class AdminController extends AbstractController
 {
@@ -26,7 +26,7 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("/categories/ajout", name="categories_ajoot")
+     * @Route("/categories/ajout", name="categories_ajout")
      */
     public function ajoutCategories(Request $request): Response
     {
